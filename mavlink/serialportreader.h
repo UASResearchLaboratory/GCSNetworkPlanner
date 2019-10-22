@@ -41,7 +41,7 @@
 #include <QByteArray>
 #include <QObject>
 #include <iostream>
-#include "/home/faycal/Desktop/cloud/UavProject/UAV/mav/mav-2.0/common/mavlink.h"
+#include "common/mavlink.h"
 
 
 QT_USE_NAMESPACE
