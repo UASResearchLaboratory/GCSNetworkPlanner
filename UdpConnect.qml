@@ -18,11 +18,6 @@ Item {
     signal newDdsArgumentsDJI(var args)
     signal newDdsArgumentsMAV(var args)
 
-    /*Component.onCompleted:
-    {
-        ddsMenu.createDjiActivateMenu()
-    }*/
-
     FileDialog {
         id: fileDialog
         title: "Please choose a file"
@@ -64,33 +59,6 @@ Item {
             font.pixelSize: 15
         }
 
-//        Button {
-//            id: buttonBrowse
-//            x: -17
-//            text: qsTr("browse")
-//            anchors.top: ddsparameters.bottom
-//            anchors.topMargin: 10
-//            anchors.left: parent.left
-//            anchors.leftMargin: 8
-//            onClicked:
-//            {
-//                fileDialog.visible = true
-//            }
-//        }
-
-//        TextField {
-//            id: textFieldDdsPath
-//            x: 76
-//            anchors.top: ddsparameters.bottom
-//            anchors.topMargin: 10
-//            anchors.right: parent.right
-//            anchors.rightMargin: 8
-//            anchors.left: buttonBrowse.right
-//            anchors.leftMargin: 8
-//            placeholderText: qsTr("")
-//            text: "/home/faycal/Desktop/UAVPROJECT/dds_net_conf.ini"
-//        }
-
         Text {
             id: textUavName
             x: -15
@@ -110,16 +78,6 @@ Item {
             anchors.leftMargin: 10
             font.pixelSize: 15
         }
-
-//        Text {
-//            id: textTopicName
-//            x: -21
-//            y: 141
-//            text: qsTr("Topic Name")
-//            anchors.left: parent.left
-//            anchors.leftMargin: 4
-//            font.pixelSize: 15
-//        }
 
         TextField {
             id: textFieldUavName
@@ -152,21 +110,6 @@ Item {
             validator: RegExpValidator { regExp: /[0-9]{1,3}/ }
         }
 
-//        TextField {
-//            id: textFieldTopicName
-//            x: 67
-//            y: 137
-//            anchors.left: textTopicName.right
-//            anchors.leftMargin: 8
-//            anchors.top: textFieldDomainID.bottom
-//            anchors.topMargin: 11
-//            anchors.right: parent.right
-//            anchors.rightMargin: 8
-//            placeholderText: qsTr("")
-//            validator: RegExpValidator { regExp: /[0-9_A-Za-z]{1,10}/ }
-//            text:"0"
-//        }
-
         Button {
             id: buttonConnect
             x: -17
@@ -183,9 +126,9 @@ Item {
                 argumentsList.push(textFieldTopicName.text)
                 if(buttonConnect.text == "Connect" || buttonConnect.text == "Reconnect")
                     if(toggleButton1.text == "MAV")
-                        ddsMenu.newDdsArgumentsMAV(argumentsList)
+                        udpConnect.newDdsArgumentsMAV(argumentsList)
                     else
-                        ddsMenu.newDdsArgumentsDJI(argumentsList)
+                        udpConnect.newDdsArgumentsDJI(argumentsList)
             }
         }
         ToggleButton {
@@ -218,7 +161,7 @@ Item {
         anchors.leftMargin: 8
         onClicked:
         {
-            ddsMenu.visible = false
+            udpConnect.visible = false
         }
     }
     function connectionStatusUpdate(status)
