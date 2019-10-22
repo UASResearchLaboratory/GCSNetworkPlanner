@@ -26,12 +26,6 @@ import QtQuick.Controls 2.3
 
 
 Item {
-    //
-    // Holds the current joystick selected by the combobox
-    //
-
-    //    Rectangle
-    //    {
 
     id:mainwindow
     objectName: "window"
@@ -47,26 +41,10 @@ Item {
     signal  axisCd (double currentAxis,double currentParameter)
     signal  axisValueChanged(double currentAxis,double valueAxis)
     signal  joystickProtocolChanged(int index)
-
-
-
-
-    //
-    // Window geometry
-    //
+    
     width: 640
     height: 480
 
-    //
-    // Other window properties
-    //
-   // visible: false
-    // title: qsTr ("Dayaa Joystick")
-
-    //
-    // Generates the axes, button and POV indicators when the user selects
-    // another joystick from the combobox
-    //
     function generateJoystickWidgets (id) {
         /* Clear the joystick indicators */
         axes.model = 0
