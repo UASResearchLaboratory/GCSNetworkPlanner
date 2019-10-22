@@ -1,0 +1,65 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ico/takeoffi.ico</file>
+        <file>ico/takeoff.ico</file>
+        <file>ico/rtli.ico</file>
+        <file>ico/rtl.ico</file>
+        <file>ico/quadup.ico</file>
+        <file>ico/quaddown.ico</file>
+        <file>ico/landi.ico</file>
+        <file>ico/land.ico</file>
+        <file>ico/drone_i.ico</file>
+        <file>ico/djigcs.ico</file>
+        <file>ico/mavlinklogo.ico</file>
+        <file>ico/djilogo.ico</file>
+        <file>ico/droneaddi.ico</file>
+        <file>ico/droneadd.ico</file>
+        <file>ico/controlpaneli.ico</file>
+        <file>ico/controlpanel.ico</file>
+        <file>ico/centeri.ico</file>
+        <file>ico/center.ico</file>
+        <file>ico/plus.ico</file>
+        <file>ico/plusi.ico</file>
+        <file>ico/minus.ico</file>
+        <file>ico/minusi.ico</file>
+        <file>ico/rc.png</file>
+        <file>ico/rci.png</file>
+        <file>ico/planner.png</file>
+        <file>ico/planneri.png</file>
+        <file>ico/speak.png</file>
+        <file>ico/speaki.png</file>
+        <file>ico/parametersi.png</file>
+        <file>ico/parameters.png</file>
+        <file>ico/dr1.png</file>
+        <file>ico/graphi.png</file>
+        <file>ico/graph.png</file>
+        <file>ico/seriali.png</file>
+        <file>ico/rj45i.png</file>
+        <file>ico/cellulari.png</file>
+        <file>ico/connecti.png</file>
+        <file>ico/connect.png</file>
+        <file>ico/cellular.png</file>
+        <file>ico/rj45.png</file>
+        <file>ico/serial.png</file>
+        <file>ico/marker.gif</file>
+        <file>ico/Propeller.png</file>
+        <file>ico/accepted.png</file>
+        <file>ico/3g.png</file>
+        <file>ico/2g.png</file>
+        <file>ico/4g.png</file>
+        <file>ico/fair.png</file>
+        <file>ico/good.png</file>
+        <file>ico/excellent.png</file>
+        <file>ico/nosignal.png</file>
+        <file>ico/1bar.png</file>
+        <file>ico/2bars.png</file>
+        <file>ico/3bars.png</file>
+        <file>ico/4bars.png</file>
+        <file>ico/5bars.png</file>
+        <file>ico/usb.png</file>
+        <file>ico/25 battery.png</file>
+        <file>ico/50 battery.png</file>
+        <file>ico/75 battery.png</file>
+        <file>ico/full battery.png</file>
+    </qresource>
+</RCC>

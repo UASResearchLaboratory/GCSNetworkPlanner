@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>UavMapForm.qml</file>
+        <file>UavMap.qml</file>
+        <file>UdpConnect.qml</file>
+        <file>DjiActivateUI.qml</file>
+        <file>Joystick.qml</file>
+        <file>Planner.qml</file>
+        <file>PlotView.qml</file>
+        <file>PlotMain.qml</file>
+        <file>NetworkBanner.qml</file>
+    </qresource>
+</RCC>
