@@ -67,12 +67,6 @@ Item {
             name: "mapboxgl"
 
             PluginParameter { name: "mapboxgl.access_token"; value: "sk.eyJ1IjoiYmF5b3UwMjAiLCJhIjoiY2poNGRqd2dkMHg1MzMzcnlmamtxc2o5cSJ9.Pn_zbpERTx-0-NeEqJEikA" }
-            //        PluginParameter { name: "mapbox.map_id"; value: "styles/bayou020/cj9v21si54gk52st7ivz9ywui" }
-           // PluginParameter { name: "mapboxgl.mapping.additional_style_urls"; value: "mapbox://styles/bayou020/cjh8omavq0xt12rp6qlxrlu3j" }
-            // PluginParameter { name: "mapboxgl.mapping.additional_style_urls"; value: "mapbox://styles/bayou020/cjh8oqiud72i62rp9me2sj3gf" }
-           //PluginParameter { name: "mapboxgl.mapping.additional_style_urls"; value: "mapbox://styles/bayou020/cjh8oqaqj6xki2rqlffwawuaz" }
-            // PluginParameter { name: "mapboxgl.mapping.additional_style_urls"; value: "mapbox://styles/bayou020/cjh8oq1yt72hr2rp99n8mdbfn" }
-
 
             PluginParameter {
                 name: "mapboxgl.mapping.items.insert_before"
@@ -86,44 +80,6 @@ Item {
 
 
         }
-
-
-
-
-        //                        MapParameter {
-        //                            id: source
-        //                            type: "source"
-
-        //                            property var name: "weatherSource"
-        //                          //  property var tiles:  "https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=375bc10f6f6da05c872d85c9ef9f52fe"                //"https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=80f3bdceecbd21d53f2893054a176915"
-        //                            property var sourceType: "raster"
-        //                              property var url:"https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?bbox={bbox-epsg-3857}&format=image/png&service=WMS&version=1.1.1&appid=80f3bdceecbd21d53f2893054a176915"
-
-        ////                            property var tileSize: 256
-        ////                            property var minzoom: 4.0
-        ////                            property var maxzoom: 20.0
-
-        //                        }
-
-
-        //        MapParameter {
-        //            type: "layer"
-
-        //            property var name: "wind_weather"
-        //            property var layerType: "raster"
-        //            property var source: "weatherSource"
-
-        //        }
-
-
-        /*{type: raster,  tiles: ["https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=874718354841f0e0250b4b06a05a971e"],
-                                            tileSize: 256 }*/
-        //                                        property var minzoom: 1.0
-        //                                        property var maxzoom: 20.0
-
-
-
-
 
 
         //        MapParameter {
@@ -143,7 +99,7 @@ Item {
         //                    property var fillExtrusionBase: { return { type: "identity", property: "min_height" } }
         //                }
 
-        copyrightsVisible: false
+        copyrightsVisible: true
         center
         {
             latitude: valueLatitude
@@ -196,121 +152,9 @@ Item {
         }
 
 
-        MapItemView
-        {
-            id:meteoText
-            model:meteoModel
-            delegate: MapQuickItem
-            {
-                id:meteotextDelegate
+       
 
-                zoomLevel: zoomLevel.toFixed()
-
-                sourceItem: Text
-                {
-                    text:qsTr("      temp: "+cityActTemp)
-                    font.pixelSize:14
-
-                }
-                anchors.fill:bottom.parent
-
-
-                coordinate : QtPositioning.coordinate(cityLat,cityLon)
-            }
-        }
-
-        MapItemView
-        {
-            id:meteoView
-            model:meteoModel
-            delegate:
-                MapQuickItem
-            {
-                id:delegateWeather
-                anchorPoint.x:delegateWeather.width *0.5
-                anchorPoint.y:delegateWeather.height *0.5
-                zoomLevel: zoomLevel.toFixed()
-
-                sourceItem: Image
-                {
-                    id:delegate_weather_img
-                    sourceSize.width: 40
-                    sourceSize.height: 40
-                    source:{
-
-
-                        switch (cityIcon)
-                        {
-
-                        case "01d":
-                        case "01n":
-                            "qrc:/ico/weather-sunny.png"
-                            break;
-                        case "02d":
-                        case "02n":
-                            "qrc:/ico/weather-sunny-very-few-clouds.png"
-                            break;
-                        case "03d":
-                        case "03n":
-                            "qrc:/ico/weather-few-clouds.png"
-                            break;
-                        case "04d":
-                        case "04n":
-                            "qrc:/ico/weather-overcast.png"
-                            break;
-                        case "09d":
-                        case "09n":
-                            "qrc:/ico/weather-showers.png"
-                            break;
-                        case "10d":
-                        case "10n":
-                            "qrc:/ico/weather-showers.png"
-                            break;
-                        case "11d":
-                        case "11n":
-                            "qrc:/ico/weather-thundershower.png"
-                            break;
-                        case "13d":
-                        case "13n":
-                            "qrc:/ico/weather-snow.png"
-                            break;
-                        case "50d":
-                        case "50n":
-                            "qrc:/ico/weather-fog.png"
-                            break;
-                        default:
-                            "qrc:/ico/weather-fog.png"
-                        }
-
-                    }
-
-
-                    // smooth:true
-
-
-
-                    MouseArea
-                    {
-                        id:weatherMouse
-                        anchors.fill: parent
-                        drag.target: parent
-                        acceptedButtons: Qt.LeftButton | Qt.RightButton
-                        onEntered:
-                        {
-
-
-                        }
-
-
-                    }
-                }
-
-
-
-                coordinate : QtPositioning.coordinate(cityLat,cityLon)
-            }
-
-        }
+       
 
         MapItemView {
             id: mapItemView
@@ -376,37 +220,6 @@ Item {
 
 
 
-        }
-
-
-        MapItemView
-        {
-
-            id:antennaInformations
-            model:sampleModel
-
-            delegate:Item
-            {
-                id:itemAntenna
-                height:100
-                width:100
-
-
-            }
-
-
-
-
-        }
-
-        TableView
-        {
-            id:tableView
-            model: ListModel
-            {
-                id: tableViewModel
-            }
-            visible: false
         }
 
 
@@ -757,11 +570,6 @@ Item {
 
     }
 
-    function cellRow (row)
-    {
-
-        console.log(row)
-    }
     function polylineAdd(x,y)
     {
 
@@ -792,42 +600,6 @@ Item {
 
     }
 
-
-    function weatherParams()
-
-    {
-
-
-        weatherIndex=weather.getWeatherSize();
-        console.log(weatherIndex + "index");
-        for (var j=0;j<weatherIndex;j++)
-
-        {
-            //console.log(j+ "weather index")
-            meteoModel.append({"cityName":weather.getCityName(j),"cityLat":weather.getCityLat(j),"cityLon":weather.getCityLon(j),"cityIcon":weather.getWeatherIcon(j),"cityActTemp":weather.getCityActualTemp(j)})
-
-            //console.log("appended "+j)
-            console.log( meteoModel.get(j).cityName+" city " + j+ "  "+
-
-                        + meteoModel.get(j).cityLat +" lat "+ meteoModel.get(j).cityLon+" Lon "+ meteoModel.get(j).cityIcon+" Icon")
-
-
-
-        }
-
-
-
-    }
-
-
-
-
-    //    function cellInformation(latitude,longitude,range)
-    //    {
-
-    //
-
-    //    }
 
 }
 
